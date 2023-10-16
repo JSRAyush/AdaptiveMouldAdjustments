@@ -7,7 +7,7 @@ using Rhino;
 using Rhino.Geometry;
 
 
-using KangarooSolver;   //Remove if not used
+using KangarooSolver;  
 using KangarooSolver.Goals;
 
 namespace MouldLib
@@ -747,27 +747,7 @@ namespace MouldLib
 
         public void AdjustPanelRotation()
         {
-            Rhino.Geometry.Collections.MeshVertexNormalList normals = mesh.Normals;
-
-            //Vector3d vec = new Vector3d();
-            //Transform t = Transform.Identity;
-            //if (uDivs > vDivs)
-            //{
-            //    vec = srfNodes[srfNodes.Length-1][0].m_pos - srfNodes[0][0].m_pos;
-            //    t = Transform.Rotation(vec, new Vector3d(1, 0, 0), srfNodes[0][0].m_pos);
-            //}
-            //else
-            //{
-            //    vec = srfNodes[0][srfNodes[0].Length-1].m_pos - srfNodes[0][0].m_pos;
-            //    t = Transform.Rotation(vec, new Vector3d(0, 1, 0), srfNodes[0][0].m_pos);
-            //}
-            //Vector3d massAdd = new Vector3d();
-            //for (int i = 0; i < normals.Count; i++)
-            //{
-            //    massAdd += normals[i];
-            //}
-            //massAdd.Unitize();
-            
+            Rhino.Geometry.Collections.MeshVertexNormalList normals = mesh.Normals;          
 
             Plane plane = new Plane(srfNodes[0][0].m_pos, srf.PointAt(1, 0), srf.PointAt(0, 1));
             Plane plane_To = new Plane(srfNodes[0][0].m_pos, Vector3d.XAxis, Vector3d.YAxis);
